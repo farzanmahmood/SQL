@@ -4,7 +4,7 @@
 select Zoo, count(distinct species) as 'No. of Unique Species' from Animal
 group by Zoo;
 
---2. List the zoo name, employee name and salary of each employee that is a world’s best expert in a species. Sequence the output by employee name within zoo name.
+--2. List the zoo name, employee name and salary of each employee that is a worldâ€™s best expert in a species. Sequence the output by employee name within zoo name.
 select Zoo, EmpName, Salary from employee e inner join species s
 on e.EmpNo = s.WorldBestExpertEmpNo
 order by zoo, EmpName;
@@ -47,7 +47,7 @@ where Species = 'Panda'
 group by Zoo
 having count(*) > 2);
 
---9. List the names, gender and salaries of all male employees that are the world’s best expert for a threatened species (status = T).
+--9. List the names, gender and salaries of all male employees that are the worldâ€™s best expert for a threatened species (status = T).
 select EmpName, Gender, Salary from Employee
 where Gender = 'M' and EmpNo in
 (select worldbestexpertempno from Species
@@ -84,7 +84,7 @@ select Country from zoo
 group by Country
 having count(*) > 2;
 
---15. List the species details for the species that have a world’s best expert working in a zoo that also has animals of that same species. Show each species only once.
+--15. List the species details for the species that have a worldâ€™s best expert working in a zoo that also has animals of that same species. Show each species only once.
 select distinct s.* from species s inner join Employee e
 on s.WorldBestExpertEmpNo = e.EmpNo inner join animal a
 on s.SpeciesName = a.Species
